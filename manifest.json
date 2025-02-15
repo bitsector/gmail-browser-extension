@@ -3,7 +3,7 @@
     "name": "Gmail Page Reader",
     "version": "1.0",
     "description": "Reads Gmail content directly from the webpage.",
-    "permissions": ["scripting"],
+    "permissions": ["scripting", "notifications"],
     "host_permissions": ["https://mail.google.com/*"],
     "background": {
       "service_worker": "background.js"
