@@ -6,7 +6,7 @@ if (!window.hasRunContentScript) {
       const emailRows = document.querySelectorAll(".zA"); // Select all email rows
       for (const row of emailRows) {
         const subjectElement = row.querySelector(".bog"); // Locate subject element
-        if (subjectElement && subjectElement.innerText.toLowerCase().includes("agoda")) {
+        if (subjectElement && subjectElement.innerText.toLowerCase().includes("test-script")) {
           return row; // Return the matching email row
         }
       }
