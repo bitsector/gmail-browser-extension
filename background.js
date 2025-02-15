@@ -7,6 +7,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           if (activeTab.url && activeTab.url.includes("https://mail.google.com")) {
             console.log("You are on a Gmail page!");
             sendNotification("Gmail Page Reader", "You are on a Gmail page!");
+            // Inject content.js into Gmail
+            chrome.scripting.executeScript({
+              target: { tabId: activeTab.id },
+              files: ["content.js"]
+            });
           } else {
             console.log("This is not a Gmail page. Please open Gmail to use this extension.");
             sendNotification("Gmail Page Reader", "This is not a Gmail page. Please open Gmail.");
